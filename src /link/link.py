@@ -19,6 +19,9 @@ MODES = {
 }
 
 def set_mode(master, mode):
+    """
+    Set UAV's mode
+    """
     if mode not in MODES:
         raise ValueError("Wrong input mode")
     curr = MODES[mode]
@@ -28,6 +31,9 @@ def set_mode(master, mode):
     curr[0], curr[1], curr[2], 0, 0, 0, 0)
 
 def takeoff(master, altitude):
+    """
+    Take the UAV off
+    """
     master.mav.command_long_send(
         master.target_system,
         master.target_component,
@@ -36,6 +42,9 @@ def takeoff(master, altitude):
         0, 0, 0, 0, 0, 0, altitude)
 
 def send_ned_velocity(master, vx, vy, vz):
+    """
+    Change UAV's position
+    """
     master.mav.set_position_target_local_ned_send(
         0,
         master.target_system,
