@@ -1,0 +1,6 @@
+train: ./src/model/data/train
+val: ./src/model/data/val
+
+nc: 1
+
+names: ["powerline support"]
