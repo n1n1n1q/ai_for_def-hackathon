@@ -1,8 +1,10 @@
 """
 MavSDK
 """
+
 import asyncio
 from mavsdk import System
+
 
 async def get_altitude(drone):
     """
@@ -13,7 +15,8 @@ async def get_altitude(drone):
         break
     return absolute_altitude
 
-async def set_up(address = "udp://:14540"):
+
+async def set_up(address="udp://:14540"):
     """
     Set the connection up
     """
@@ -32,7 +35,8 @@ async def set_up(address = "udp://:14540"):
             break
     return drone
 
-async def takeoff(drone, sleep_time = 10):
+
+async def takeoff(drone, sleep_time=10):
     """
     Arm the drone
     """
@@ -43,6 +47,7 @@ async def takeoff(drone, sleep_time = 10):
     await drone.action.takeoff()
     await asyncio.sleep(sleep_time)
 
+
 async def rotate_camera(drone, pitch, yaw):
     """
     Rotate camera
@@ -50,7 +55,8 @@ async def rotate_camera(drone, pitch, yaw):
     await drone.gimbal.set_pitch_and_yaw(pitch, yaw)
     print(f" -- Rotated camera to pitch: {pitch}, yaw: {yaw}")
 
-async def fly_forward(drone, distance, speed = 5):
+
+async def fly_forward(drone, distance, speed=5):
     """
     Fly forward
     """

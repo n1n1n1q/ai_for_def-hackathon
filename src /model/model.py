@@ -1,6 +1,7 @@
 """
 Object detection model itself
 """
+
 import cv2
 import numpy as np
 from ultralytics import YOLO
@@ -8,6 +9,7 @@ from ultralytics import YOLO
 model = YOLO("src/model/yolov8n_custom.pt")
 
 cap = cv2.VideoCapture(0)
+
 
 def get_powerline_position(frame):
     """
